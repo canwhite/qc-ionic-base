@@ -14,11 +14,9 @@
           <ion-title size="large">Blank</ion-title>
         </ion-toolbar>
       </ion-header>
- <!--    
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>  -->
+     
+
+
 
       <!-- list -->
       <ion-list>
@@ -34,13 +32,32 @@
           </ion-badge>
         </ion-item>
       </ion-list>
+
+      <!-- button 操作dom -->
+      <div ref="content">
+        <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
+      </div>
+
+      <!-- icon的使用 -->
+      <div style="margin-top:30px;padding-left:20px" >
+        <ion-icon :icon="heart"></ion-icon>
+        <!-- 可以根据需要使用不同的图标 -->
+        <ion-icon :ios="logoApple" :md="logoAndroid"></ion-icon>  
+      </div>
+
+
+      <div style="margin-top:30px;padding-left:20px" >
+        <strong>Ready to create an app?</strong>
+        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      </div>  
+
+
       <!-- fixed按钮 -->
       <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button  @click="() => router.push('/new')">
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-
 
     </ion-content>
 
@@ -63,11 +80,20 @@ import {
   IonBadge,
   IonFab,
   IonFabButton,
-  IonIcon
+  IonIcon,
+  IonButton
   
 } from '@ionic/vue';
-import { defineComponent } from 'vue';
-import { add } from 'ionicons/icons';
+//操作dom，依赖于vue的ref
+import { defineComponent ,ref} from 'vue';
+import { 
+  add,
+  heart,
+  logoAndroid,
+  logoApple
+
+
+} from 'ionicons/icons';
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
@@ -86,18 +112,28 @@ export default defineComponent({
     IonBadge,
     IonFab,
     IonFabButton,
-    IonIcon
+    IonIcon,
+    IonButton
   },
   data(){
     return{
-
+      add,
+      router:useRouter(),
+      heart,
+      logoAndroid,
+      logoApple
 
     }
   },
-  setup() {
+  /* setup() {
+    //最后是需要订阅吗
     return {
-      add,
-      router:useRouter()
+
+    }
+  }, */
+  methods:{
+    scrollToBottom(){
+      console.log(this.$refs.content)
     }
   }
 });

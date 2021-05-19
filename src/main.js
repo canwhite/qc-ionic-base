@@ -23,11 +23,35 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* 组件的全局注册1 */
+import { IonContent, IonicVue, IonPage } from '@ionic/vue';
+
+/* 图标的全局注册 */
+import { addIcons } from 'ionicons';
+import { heart } from 'ionicons/icons';
+
+addIcons({
+  'heart': heart 
+});
+// 在组件中使用的时候
+//<ion-icon icon="heart"></ion-icon>
+
+
+
 //createApp函数使我们可以初始化Vue应用程序
 const app = createApp(App)
   .use(IonicVue)//这里应该是全局导入了
   .use(router);
+ 
   
+/* 组件的全局注册2,在具体的界面中直接使用就可以了 */
+/* app.component('ion-content', IonContent);
+app.component('ion-page', IonPage); */
+
+/* 自定义组件的使用和vue一样 */
+
+
+
 router.isReady().then(() => {
   app.mount('#app');
 });
