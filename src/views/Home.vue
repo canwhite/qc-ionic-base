@@ -35,6 +35,12 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  data(){
+    return{
+
+
+    }
   }
 });
 </script>
