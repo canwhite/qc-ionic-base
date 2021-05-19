@@ -25,7 +25,7 @@ import './theme/variables.css';
 
 //createApp函数使我们可以初始化Vue应用程序
 const app = createApp(App)
-  .use(IonicVue)
+  .use(IonicVue)//这里应该是全局导入了
   .use(router);
   
 router.isReady().then(() => {
