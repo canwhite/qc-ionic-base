@@ -22,7 +22,7 @@
           <ion-checkbox slot="start"></ion-checkbox>
           <ion-label>
             <h1>Create Idea</h1>
-            <ion-note>Run Idea By Brandy</ion-note>
+            <ion-note>{Run Idea By Brandy}</ion-note>
           </ion-label>
           <ion-badge color="success" slot="end">
             5 Days
@@ -30,6 +30,9 @@
         </ion-item>
       </ion-list>
 
+      <div style="padding:20px"> 
+        <ion-note>request:{{res_data}}</ion-note>
+      </div>
       <!-- button 操作dom -->
       <div ref="content">
         <ion-button @click="scrollToBottom">Scroll to Bottom</ion-button>
@@ -65,6 +68,9 @@
         <div> {{video}}</div>
       </div>
 
+      <div> 
+        <IonButton @click="setName">Set Name</IonButton>
+      </div>
 
       <!-- <IonButton @click="showAlert">show Alert</IonButton> -->
 
@@ -82,6 +88,8 @@
 </template>
 
 <script >
+import axios from 'axios';//请求工具
+import qs, { stringify } from "qs";
 import { 
   IonContent, 
   IonHeader, 
@@ -115,7 +123,7 @@ import {MediaCapture,MediaFile,CaptureError } from '@ionic-native/media-capture'
 //dialog 这个不行，看来剔除是有原因的，在h5层面上实现吧
 // import { Dialog } from '@capacitor/dialog';
 //todo media
-const { Camera} = Plugins;
+const { Camera,Storage} = Plugins;
 
 
 export default defineComponent({
@@ -138,6 +146,35 @@ export default defineComponent({
     IonButton,
 
   },
+  ionViewDidEnter() {
+    console.log('Home page did enter');
+  },
+  ionViewDidLeave() {
+    console.log('Home page did leave');
+  },
+  ionViewWillEnter() {
+    console.log('Home page will enter');
+    //在这里发起请求https://api.apiopen.top/getJoke?page=1&count=2&type=video
+    let params = {
+      page:1,
+      count:2,
+      type:"video"
+    }
+    axios.get("https://api.apiopen.top/getJoke",{
+      params:qs.stringify(params)
+    }).then(res=>{
+      // console.log("----res",res.data.result[0].text);
+      this.res_data = res.data.result[0].text || "";
+      
+    })
+    .catch(err=>{
+      console.log("err:",err);
+    });
+
+  },
+  ionViewWillLeave() {
+    console.log('Home page will leave');
+  },
   data(){
     return{
       add,
@@ -147,7 +184,8 @@ export default defineComponent({
       logoApple,
       photo:"",
       mediaCapture: MediaCapture,
-      video:'',
+      video:"",
+      res_data:"",    
     }
   },
   /* setup() {
@@ -182,7 +220,12 @@ export default defineComponent({
       this.photo = image.webPath;
 
     },
-    
+    async setName(){
+      await Storage.set({
+        key: 'name',
+        value: 'Max',
+      });
+    },
     //二维码扫描
     async openScanner(){
       const data = await BarcodeScanner.scan();
@@ -207,7 +250,6 @@ export default defineComponent({
           (err) => console.error(err)
       );
     }
-
   }
 });
 </script>
