@@ -40,3 +40,8 @@ ionic cap add android
 ionic cap open ios
 ionic cap open android
 ```
+
+# update
+```
+ionic cap sync
+```
