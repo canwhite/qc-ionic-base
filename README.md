@@ -1,6 +1,11 @@
 # qc-ionic-base
-javascript版，基础项目
+javascript版，基础项目,目前已包含
+* 数据请求
+* 图片上传
+* 状态管理
+* 路由
 
+实现用了vue
 
 # ts => js
 
@@ -42,6 +47,7 @@ ionic cap open android
 ```
 
 # update
+
 ```
 ionic cap sync
 ```
