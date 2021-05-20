@@ -3,6 +3,9 @@ javascript版，基础项目
 
 
 # ts => js
+
+**this project had been changed**
+
 1.Remove TypeScript dependencies:
 ```
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
@@ -17,3 +20,23 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 5.Delete the shims-vue.d.ts file.
 
 6.Remove lang="ts" from the script tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be App.vue and views/Home.vue.
+
+# build
+
+1.add Capacitor to your project
+```
+ionic integrations enable capacitor
+```
+2.Next, build the project, then add your platform of choice:
+
+```
+ionic build
+ionic cap add ios
+ionic cap add android
+```
+
+3.We use the standard native IDEs (Xcode and Android Studio) to open, build, and run the iOS and Android projects:
+```
+ionic cap open ios
+ionic cap open android
+```
