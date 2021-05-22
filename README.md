@@ -51,3 +51,7 @@ ionic cap open android
 ```
 ionic cap sync
 ```
+  
+# custom plugin
+
+[custom plugin](https://github.com/canwhite/qc-capacitor-plugin)
