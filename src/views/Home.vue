@@ -71,6 +71,8 @@
       <div> 
         <IonButton @click="setName">Set Name</IonButton>
       </div>
+      <!-- custom plugin -->
+      <!-- <div> {{echo}} </div> -->
 
       <!-- <IonButton @click="showAlert">show Alert</IonButton> -->
 
@@ -123,6 +125,7 @@ import {MediaCapture,MediaFile,CaptureError } from '@ionic-native/media-capture'
 //dialog 这个不行，看来剔除是有原因的，在h5层面上实现吧
 // import { Dialog } from '@capacitor/dialog';
 //todo media
+/* import {Echo} from 'echo' */
 const { Camera,Storage} = Plugins;
 
 
@@ -186,6 +189,7 @@ export default defineComponent({
       mediaCapture: MediaCapture,
       video:"",
       res_data:"",    
+      // echo:"",
     }
   },
   /* setup() {
@@ -225,6 +229,8 @@ export default defineComponent({
         key: 'name',
         value: 'Max',
       });
+      /* var echo =  await Echo.echo({value:"hello"});
+      this.echo = echo.value; */
     },
     //二维码扫描
     async openScanner(){

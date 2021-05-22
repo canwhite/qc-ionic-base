@@ -10,8 +10,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@capacitor/android": "^2.4.7",
+    "@capacitor/android": "^3.0.0-rc.0",
     "@capacitor/core": "2.4.7",
+    "@capacitor/ios": "3.0.0",
     "@ionic-native/barcode-scanner": "^5.33.0",
     "@ionic-native/core": "^5.33.0",
     "@ionic-native/media-capture": "^5.33.0",
@@ -27,7 +28,7 @@
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.7",
+    "@capacitor/cli": "next",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
