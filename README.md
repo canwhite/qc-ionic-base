@@ -1,5 +1,6 @@
 # qc-ionic-base
-javascript版，基础项目,目前已包含
+ionic的ios/android/electron跨平台方案，集成capacitor，自定义plugin
+
 * 数据请求
 * 状态管理
 * 路由
