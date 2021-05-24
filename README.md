@@ -67,7 +67,7 @@ ionic cap add @capacitor-community/electron
 PS1:
 然后一直卡在：Adding Electron platform;
 如果看到已经有electron文件夹了，ctrl + c退出;
-将原来的node_modules删除
+将electron文件夹下原来的node_modules删除
 cd electron
 PS2：change src/index.ts to src/index.js
 cnpm i
