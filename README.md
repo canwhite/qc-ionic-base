@@ -6,7 +6,16 @@ javascript版，基础项目,目前已包含
 * 打开相机、视频录制、扫码
 * platform支持： ios/android/electron
 
-实现用了vue
+vue版本
+
+
+# init
+
+```
+npm install -g @ionic/cli@latest
+ionic start myApp blank --type vue
+cd myApp
+```
 
 # ts => js
 
@@ -26,6 +35,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 5.Delete the shims-vue.d.ts file.
 
 6.Remove lang="ts" from the script tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be App.vue and views/Home.vue.
+
 
 # build
 
