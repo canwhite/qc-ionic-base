@@ -55,3 +55,21 @@ ionic cap sync
 # custom plugin
 
 [custom plugin](https://github.com/canwhite/qc-capacitor-plugin)
+
+
+# electron
+
+```
+cnpm i @capacitor-community/electron
+ionic build
+ionic cap add @capacitor-community/electron
+PS1:
+然后一直卡在：Adding Electron platform;
+如果看到已经有electron文件夹了，ctrl + c退出;
+将原来的node_modules删除
+cd electron
+PS2：change src/index.ts to src/index.js
+cnpm i
+npm run electron:start
+
+```
