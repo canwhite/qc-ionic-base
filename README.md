@@ -4,6 +4,7 @@ javascript版，基础项目,目前已包含
 * 状态管理
 * 路由
 * 打开相机、视频录制、扫码
+* platform支持： ios/android/electron
 
 实现用了vue
 
