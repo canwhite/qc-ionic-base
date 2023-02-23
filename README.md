@@ -66,7 +66,12 @@ ionic cap sync
   
 # custom plugin
 
-[custom plugin](https://github.com/canwhite/qc-capacitor-plugin)
+[custom plugin](https://github.com/canwhite/qc-capacitor-plugin)    
+[cap plugin](https://ionicframework.com/docs/native)
+
+# bridge
+[jsbridge](https://juejin.cn/post/6844903885555892232)    
+[jsbridge-example](https://github.com/canwhite/jsbridge-example)
 
 
 # electron
@@ -85,3 +90,5 @@ cnpm i
 npm run electron:start
 
 ```
+
+
